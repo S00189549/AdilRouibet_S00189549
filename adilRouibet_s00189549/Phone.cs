@@ -13,7 +13,8 @@ namespace adilRouibet_s00189549
         public string OperatingSystem { get; set; }
         public string OS_Image { get; set; }
         public string Phone_Image { get; set; }
-
+        
+        public int ID { get; set; }
 
         public void IncreasedPrice(decimal percentage)
         {  

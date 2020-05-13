@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:adilRouibet_s00189549"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="UI_ListboxTemplate">
+
+            <StackPanel Orientation="Horizontal" >
+                <Image Source="{Binding Path=OS_Image}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Path=Name}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Margin="5"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+
+        </Grid.RowDefinitions>
+        <ListBox x:Name="listBox" ItemTemplate="{StaticResource ResourceKey= UI_ListboxTemplate}"  Grid.Row="1" SelectionChanged="ListBox_SelectionChanged" />
+        <TextBlock x:Name="textBlock" Grid.Column="1"  Margin="10,0,0,0" Grid.Row="0" VerticalAlignment="Top" Text="500 "/>
+        <Image x:Name="image" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1"/>
+
     </Grid>
 </Window>

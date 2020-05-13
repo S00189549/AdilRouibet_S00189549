@@ -21,7 +21,8 @@ namespace DatabaseCreator
                     Price = 500,
                     OperatingSystem = "Android",
                     OS_Image = "/images/android.png",
-                    Phone_Image = "/images/s20.jpg"
+                    Phone_Image = "/images/s20.jpg",
+                    ID =1
                 };
 
                 Phone p2 = new Phone()
@@ -30,14 +31,19 @@ namespace DatabaseCreator
                     Price = 600,
                     OperatingSystem = "IOS",
                     OS_Image = "/images/apple.png",
-                    Phone_Image = "/images/iphone11.jpg"
+                    Phone_Image = "/images/iphone11.png",
+                    ID = 2
                 };
 
                 db.phones.Add(p1);
 
                 db.phones.Add(p2);
 
+                Console.WriteLine("Phones added to table");
+
                 db.SaveChanges();
+
+                Console.WriteLine("Changes saved");
             }
 
         }
